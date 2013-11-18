@@ -1,0 +1,10 @@
+{
+  "name": "bootstrap-dangerzone",
+  "version": "0.0.1",
+  "dependencies": {
+    "angular": "*",
+    "font-awesome": "*",
+    "jQuery": "*",
+    "twitter": "*"
+  }
+}
