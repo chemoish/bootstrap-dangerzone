@@ -9,6 +9,12 @@ module.exports = (grunt) ->
     pkg: grunt.file.readJSON 'package.json'
 
 
+    coffee:
+      debug:
+        files: [
+          'dist/script/app.js': 'src/script/**/*.coffee'
+        ]
+
     jade:
       debug:
         files: [
