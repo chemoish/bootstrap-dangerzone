@@ -24,6 +24,13 @@ module.exports = (grunt) ->
           ext: '.html'
           src: '**/*.jade'
         ]
+
+    stylus:
+      debug:
+        files: [
+          'dist/style/app.css': 'src/style/**/*.styl'
+        ]
+
   startServer = (port, path, callback) ->
     app = express()
 
