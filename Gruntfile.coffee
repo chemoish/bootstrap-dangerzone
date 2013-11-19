@@ -8,6 +8,16 @@ module.exports = (grunt) ->
   grunt.initConfig
     pkg: grunt.file.readJSON 'package.json'
 
+
+    jade:
+      debug:
+        files: [
+          expand: true
+          cwd: 'src'
+          dest: 'dist'
+          ext: '.html'
+          src: '**/*.jade'
+        ]
   startServer = (port, path, callback) ->
     app = express()
 
