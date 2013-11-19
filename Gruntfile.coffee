@@ -1,17 +1,42 @@
-express = require 'express'
-
 module.exports = (grunt) ->
   grunt.loadNpmTasks 'grunt-contrib-coffee'
   grunt.loadNpmTasks 'grunt-contrib-concat'
+  grunt.loadNpmTasks 'grunt-contrib-connect'
   grunt.loadNpmTasks 'grunt-contrib-copy'
   grunt.loadNpmTasks 'grunt-contrib-jade'
   grunt.loadNpmTasks 'grunt-contrib-stylus'
+  grunt.loadNpmTasks 'grunt-contrib-uglify'
+  grunt.loadNpmTasks 'grunt-contrib-watch'
 
   grunt.initConfig
     pkg: grunt.file.readJSON 'package.json'
 
+    coffee:
+      dev:
+        files: [
+          'dist/script/app.js': 'src/script/**/*.coffee'
+        ]
+
+    jade:
+      dev:
+        files: [
+          expand: true
+          cwd: 'src'
+          dest: 'dist'
+          ext: '.html'
+          src: '**/*.jade'
+        ]
+
+    stylus:
+      dev:
+        files: [
+          'dist/style/app.css': 'src/style/**/*.styl'
+        ]
+        options:
+          urlfunc: 'url'
+
     concat:
-      debug:
+      dev:
         files: [
             dest: 'dist/style/vendor.css'
             src: [
@@ -27,52 +52,76 @@ module.exports = (grunt) ->
             ]
         ]
 
+    connect:
+      server:
+        options:
+          base: 'dist'
+          port: 8080
+
     copy:
-      debug:
+      dev:
         files: [
+          cwd: 'src'
           dest: 'dist/img/'
           expand: true
           flatten: true
-          src: 'src/img/**/*'
+          src: 'img/**/*'
         ,
+          cwd: 'vendor/bower_components'
           dest: 'dist/fonts/'
           expand: true
           flatten: true
-          src: 'vendor/bower_components/font-awesome/fonts/**/*'
+          src: 'font-awesome/fonts/**/*'
         ]
 
-    coffee:
-      debug:
+    uglify:
+      my_target:
         files: [
-          'dist/script/app.js': 'src/script/**/*.coffee'
+          'dist/script/app.js': 'dist/script/app.js'
+          'dist/script/vendor.js': 'dist/script/vendor.js'
         ]
 
-    jade:
-      debug:
-        files: [
-          expand: true
-          cwd: 'src'
-          dest: 'dist'
-          ext: '.html'
-          src: '**/*.jade'
-        ]
+    watch:
+      coffee:
+        files: 'src/**/*.coffee'
+        options:
+          interrupt: true
+        tasks: 'coffee:dev'
 
-    stylus:
-      debug:
-        files: [
-          'dist/style/app.css': 'src/style/**/*.styl'
-        ]
+      grunt:
+        files: 'Gruntfile.coffee'
 
-  startServer = (port, path, callback) ->
-    app = express()
+      jade:
+        files: 'src/**/*.jade'
+        options:
+          interrupt: true
+        tasks: 'jade:dev'
 
-    app.use express.static path
+      stylus:
+        files: 'src/**/*.styl'
+        options:
+          interrupt: true
+        tasks: 'stylus:dev'
 
-    app.listen port
+  grunt.registerTask 'default', 'Running development environment...', [
+    'build:dev'
+    'connect'
+    'watch'
+  ]
 
-    console.log 'Listening on port:' + port
+  grunt.registerTask 'build:dev', 'Running development tasks...', [
+    'coffee:dev'
+    'jade:dev'
+    'stylus:dev'
+    'concat:dev'
+    'copy:dev'
+  ]
 
-  grunt.registerTask 'server', 'Start server', ->
-    @async()
-
-    startServer 9999, 'dist'
+  grunt.registerTask 'build:prod', 'Running production tasks...', [
+    'coffee:dev'
+    'jade:dev'
+    'stylus:dev'
+    'concat:dev'
+    'copy:dev'
+    'uglify:my_target'
+  ]
