@@ -1,6 +1,10 @@
 {
   "name": "bootstrap-dangerzone",
   "version": "0.0.1",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/chemoish/bootstrap-dangerzone.git"
+  },
   "devDependencies": {
     "coffee-script": "~1.6.3",
     "express": "~3.4.4",
