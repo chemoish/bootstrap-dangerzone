@@ -30,10 +30,15 @@ module.exports = (grunt) ->
     stylus:
       dev:
         files: [
-          'dist/style/app.css': 'src/style/**/*.styl'
+          'dist/style/app.css': 'src/style/app.styl'
         ]
         options:
+          compress: false
           urlfunc: 'url'
+      prod:
+        files: '<%= stylus.dev.files %>'
+        options:
+          urlfunc: '<%= stylus.dev.options.urlfunc %>'
 
     concat:
       dev:
@@ -120,7 +125,7 @@ module.exports = (grunt) ->
   grunt.registerTask 'build:prod', 'Running production tasks...', [
     'coffee:dev'
     'jade:dev'
-    'stylus:dev'
+    'stylus:prod'
     'concat:dev'
     'copy:dev'
     'uglify:my_target'
