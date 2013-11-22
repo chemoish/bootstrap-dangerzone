@@ -4,7 +4,9 @@ Bootstrap dangerzone is a dangerously suggestful methodology for seeding your pr
 
  * [AngularJS](http://angularjs.org/)
  * [Font Awesome](http://fontawesome.io/)
+ * [HTML5 Boilerplate](http://html5boilerplate.com/)
  * [jQuery](http://jquery.com/)
+ * [Modernizr](http://modernizr.com/)
  * [Twitter Bootstrap](http://getbootstrap.com/)
 
 And written without html, css, or javascript using:
@@ -62,7 +64,7 @@ bootstrap-dangerzone/
 │   │   ├── font.styl (font/google font additions)
 │   │   ├── icon.styl
 │   │   └── variable.styl (website colors, etc)
-│   └── index.jade
+│   └── index.jade (html5 boilerplate port)
 ├── vendor/
 │   └── bower_components/ (managed by bower - do not touch)
 ├── .bowerrc
