@@ -21,39 +21,39 @@ It also comes with a biased folder structure that accommodates both small and la
 
 ## Quick start
 
-1. Install [node](http://nodejs.org/)
+ 1. Install [node](http://nodejs.org/)
 
 *Note: windows users will have to add nodejs to environment path*
 
-2. Install [npm](http://nodejs.org/download/)
+ 2. Install [npm](http://nodejs.org/download/)
 
 *Note: windows users will have to add npm to environment path*
 
-3. Install [grunt](http://gruntjs.com/)
+ 3. Install [grunt](http://gruntjs.com/)
 
 ```
 npm install -g grunt-cli
 ```
 
-4. Install [bower](http://bower.io/)
+ 4. Install [bower](http://bower.io/)
 
 ```
 npm install -g bower
 ```
 
-5. Install npm depedencies
+ 5. Install npm depedencies
 
 ```
 npm install -d
 ```
 
-6. Install bower dependencies
+ 6. Install bower dependencies
 
 ```
 bower install
 ```
 
-7. Compile, run, watch, develop
+ 7. Compile, run, watch, develop
 
 ```
 grunt
@@ -65,6 +65,7 @@ After you execute the ```grunt``` command, along with installing the dependencie
 
 See below for folder structure intended by the creator:
 
+```
 bootstrap-dangerzone/
 ├── dist/ (website files to be distributed - do not touch)
 │   ├── fonts/
@@ -100,6 +101,7 @@ bootstrap-dangerzone/
 ├── Gruntfile.coffee
 ├── package.json
 └── README.md
+```
 
 ## TODO
 
