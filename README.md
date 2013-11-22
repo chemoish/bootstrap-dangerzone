@@ -1,4 +1,4 @@
-# bootstrap-dangerzone
+# Broman
 
 Bootstrap dangerzone is a dangerously suggestful methodology for seeding your projects with the following technologies:
 
@@ -38,7 +38,7 @@ After you execute the ```grunt``` command, along with installing the dependencie
 See below for folder structure intended by the creator:
 
 ```
-bootstrap-dangerzone/
+broman/
 ├── dist/ (website files to be distributed - do not touch)
 │   ├── fonts/
 │   ├── scripts/
