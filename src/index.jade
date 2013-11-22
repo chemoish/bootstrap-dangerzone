@@ -1,25 +1,28 @@
 !!!
-html
-  head
-    title Bootstrap Dangerzone
+// if lt IE 7
+  html.no-js.lt-ie9.lt-ie8.lt-ie7
+// if IE 7
+  html.no-js.lt-ie9.lt-ie8
+// if IE 8
+  html.no-js.lt-ie9
+// if gt IE 8
+  html.no-js
+head
+  meta(charset = "utf-8")
+  meta(http-equiv = "X-UA-Compatible", content = "IE=edge")
+  title Bootstrap Dangerzone
+  meta(name = "description", content = "")
+  meta(name = "viewport", content = "width=device-width, initial-scale=1")
 
-    link(
-      rel = "stylesheet"
-      href = "style/vendor.css"
-    )
+  //- Place favicon.ico and apple-touch-icon.png in the root directory
 
-    link(
-      rel = "stylesheet"
-      href = "style/app.css"
-    )
+  link(rel = "stylesheet", href = "style/vendor.css")
+  link(rel = "stylesheet", href = "style/app.css")
 
-  body
-    | I love pink
+  script(src = "script/modernizr.js")
 
-    script(
-      src = 'script/vendor.js'
-    )
+body
+  | I love pink
 
-    script(
-      src = 'script/app.js'
-    )
+  script(src = 'script/vendor.js')
+  script(src = 'script/app.js')

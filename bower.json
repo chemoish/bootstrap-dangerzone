@@ -4,7 +4,9 @@
   "dependencies": {
     "angular": "*",
     "font-awesome": "*",
+    "html5-boilerplate": "*",
     "jQuery": "*",
+    "modernizr": "*",
     "twitter": "*"
   }
 }

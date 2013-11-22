@@ -81,12 +81,19 @@ module.exports = (grunt) ->
           expand: true
           flatten: true
           src: 'font-awesome/fonts/**/*'
+        ,
+          cwd: 'vendor/bower_components'
+          dest: 'dist/script/'
+          expand: true
+          flatten: true
+          src: 'modernizr/modernizr.js'
         ]
 
     uglify:
-      my_target:
+      prod:
         files: [
           'dist/script/app.js': 'dist/script/app.js'
+          'dist/script/modernizr.js': 'dist/script/modernizr.js'
           'dist/script/vendor.js': 'dist/script/vendor.js'
         ]
 
@@ -128,9 +135,9 @@ module.exports = (grunt) ->
 
   grunt.registerTask 'build:prod', 'Running production tasks...', [
     'coffee:dev'
-    'jade:dev'
+    'jade:prod'
     'stylus:prod'
     'concat:dev'
     'copy:dev'
-    'uglify:my_target'
+    'uglify:prod'
   ]
