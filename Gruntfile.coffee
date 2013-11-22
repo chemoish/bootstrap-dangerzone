@@ -26,6 +26,10 @@ module.exports = (grunt) ->
           ext: '.html'
           src: '**/*.jade'
         ]
+        options:
+          pretty: true
+      prod:
+        files: '<%= jade.dev.files %>'
 
     stylus:
       dev:
