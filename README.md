@@ -1,6 +1,6 @@
 # Broman
 
-Bootstrap dangerzone is a dangerously suggestful methodology for seeding your projects with the following technologies:
+Broman is a dangerously suggestful methodology for seeding your projects with the following technologies:
 
  * [AngularJS](http://angularjs.org/)
  * [Font Awesome](http://fontawesome.io/)
@@ -17,7 +17,7 @@ And written without html, css, or javascript using:
 
 ## So what does this buy me?
 
-The dangerzone is perfect for people who want to get started developing without the headache of setting up a development environment every time. The project has already configured the basics of compilation, watcher, and a server tasks.
+The bro is perfect for people who want to get started developing without the headache of setting up a development environment every time. The project has already configured the basics of compilation, watcher, and a server tasks.
 
 It also comes with a biased folder structure that accommodates both small and large projects.
 
