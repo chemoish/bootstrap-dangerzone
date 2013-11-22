@@ -21,36 +21,13 @@ It also comes with a biased folder structure that accommodates both small and la
 
 ## Quick start
 
-**Install [node](http://nodejs.org/)**
-*Note: windows users will have to add nodejs to environment path*
-
-**Install [npm](http://nodejs.org/download/)**
-*Note: windows users will have to add npm to environment path*
-
-**Install [grunt](http://gruntjs.com/)**
-```
-npm install -g grunt-cli
-```
-
-**Install [bower](http://bower.io/)**
-```
-npm install -g bower
-```
-
-**Install npm depedencies**
-```
-npm install -d
-```
-
-**Install bower dependencies**
-```
-bower install
-```
-
-**Compile, run, watch, develop**
-```
-grunt
-```
+1. Install [node](http://nodejs.org/) - *windows users will have to add nodejs to environment path*
+2. Install [npm](http://nodejs.org/download/) - *windows users will have to add npm to environment path*
+3. Install [grunt](http://gruntjs.com/); run `npm install -g grunt-cli`
+4. Install [bower](http://bower.io/); run `npm install -g bower`
+5. Install npm depedencies; run `npm install -d`
+6. Install bower dependencies; run `bower install`
+7. Compile, run, watch, develop; run `grunt`
 
 ## Folder structure *concept*
 
