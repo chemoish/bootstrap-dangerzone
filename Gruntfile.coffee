@@ -61,7 +61,7 @@ module.exports = (grunt) ->
       server:
         options:
           base: 'dist'
-          port: 8080
+          port: 8787
 
     copy:
       dev:
