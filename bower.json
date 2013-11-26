@@ -1,12 +1,12 @@
 {
-  "name": "bootstrap-dangerzone",
+  "name": "broman",
   "version": "0.0.1",
   "dependencies": {
     "angular": "*",
     "font-awesome": "*",
+    "foundation": "*",
     "html5-boilerplate": "*",
     "jQuery": "*",
-    "modernizr": "*",
-    "twitter": "*"
+    "modernizr": "*"
   }
 }

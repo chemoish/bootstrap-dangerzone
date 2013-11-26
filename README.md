@@ -4,10 +4,10 @@ Broman is a dangerously suggestful methodology for seeding your projects with th
 
  * [AngularJS](http://angularjs.org/)
  * [Font Awesome](http://fontawesome.io/)
+ * [Foundation](http://foundation.zurb.com/)
  * [HTML5 Boilerplate](http://html5boilerplate.com/)
  * [jQuery](http://jquery.com/)
  * [Modernizr](http://modernizr.com/)
- * [Twitter Bootstrap](http://getbootstrap.com/)
 
 And written without html, css, or javascript using:
 

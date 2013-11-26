@@ -71,7 +71,7 @@ module.exports = (grunt) ->
         files: [
           dest: 'dist/style/vendor.css'
           src: [
-            'vendor/bower_components/twitter/dist/css/bootstrap.css'
+            'vendor/bower_components/foundation/css/foundation.css'
             'vendor/bower_components/font-awesome/css/font-awesome.css'
           ]
         ,
@@ -79,7 +79,7 @@ module.exports = (grunt) ->
           src: [
             'vendor/bower_components/jQuery/jquery.js'
             'vendor/bower_components/angular/angular.js'
-            'vendor/bower_components/twitter/dist/js/bootstrap.js'
+            'vendor/bower_components/foundation/js/foundation.js'
           ]
         ]
         
