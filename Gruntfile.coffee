@@ -1,4 +1,5 @@
 module.exports = (grunt) ->
+  grunt.loadNpmTasks 'grunt-angular-templates'
   grunt.loadNpmTasks 'grunt-contrib-coffee'
   grunt.loadNpmTasks 'grunt-contrib-concat'
   grunt.loadNpmTasks 'grunt-contrib-connect'
@@ -14,27 +15,48 @@ module.exports = (grunt) ->
     coffee:
       dev:
         files: [
-          'dist/script/app.js': 'src/script/**/*.coffee'
+          dest: 'dist/script/app.js'
+          src: [
+            'src/app/app.coffee'
+            'src/app/**/*.coffee'
+          ]
         ]
 
     jade:
       dev:
         files: [
+          dest: 'dist/index.html'
+          src: 'src/app/index.jade'
+        ,
           expand: true
           cwd: 'src'
-          dest: 'dist'
+          dest: 'tmp'
           ext: '.html'
-          src: '**/*.jade'
+          src: [
+            '**/*.jade'
+
+            # exclude index from tmp and angular template cache
+            '!app/index.jade'
+          ]
         ]
         options:
           pretty: true
       prod:
         files: '<%= jade.dev.files %>'
 
+    ngtemplates:
+      app:
+        dest: 'tmp/template.js'
+        options:
+          url: (url) ->
+            url.replace('tmp/app/', '')
+        src: 'tmp/**/*.html'
+
     stylus:
       dev:
         files: [
-          'dist/style/app.css': 'src/style/app.styl'
+          dest: 'dist/style/app.css'
+          src: 'src/style/app.styl'
         ]
         options:
           compress: false
@@ -47,18 +69,27 @@ module.exports = (grunt) ->
     concat:
       dev:
         files: [
-            dest: 'dist/style/vendor.css'
-            src: [
-              'vendor/bower_components/twitter/dist/css/bootstrap.css'
-              'vendor/bower_components/font-awesome/css/font-awesome.css'
-            ]
-          ,
-            dest: 'dist/script/vendor.js',
-            src: [
-              'vendor/bower_components/jQuery/jquery.js'
-              'vendor/bower_components/angular/angular.js'
-              'vendor/bower_components/twitter/dist/js/bootstrap.js'
-            ]
+          dest: 'dist/style/vendor.css'
+          src: [
+            'vendor/bower_components/twitter/dist/css/bootstrap.css'
+            'vendor/bower_components/font-awesome/css/font-awesome.css'
+          ]
+        ,
+          dest: 'dist/script/vendor.js',
+          src: [
+            'vendor/bower_components/jQuery/jquery.js'
+            'vendor/bower_components/angular/angular.js'
+            'vendor/bower_components/twitter/dist/js/bootstrap.js'
+          ]
+        ]
+        
+      template:
+        files: [
+          dest: 'dist/script/app.js'
+          src: [
+            'dist/script/app.js'
+            '<%= ngtemplates.app.dest %>'
+          ]
         ]
 
     connect:
@@ -92,9 +123,14 @@ module.exports = (grunt) ->
     uglify:
       prod:
         files: [
-          'dist/script/app.js': 'dist/script/app.js'
-          'dist/script/modernizr.js': 'dist/script/modernizr.js'
-          'dist/script/vendor.js': 'dist/script/vendor.js'
+          dest: 'dist/script/app.js'
+          src: 'dist/script/app.js'
+        ,
+          dest: 'dist/script/modernizr.js'
+          src: 'dist/script/modernizr.js'
+        ,
+          dest: 'dist/script/vendor.js'
+          src: 'dist/script/vendor.js'
         ]
 
     watch:
@@ -102,7 +138,10 @@ module.exports = (grunt) ->
         files: 'src/**/*.coffee'
         options:
           interrupt: true
-        tasks: 'coffee:dev'
+        tasks: [
+          'coffee:dev'
+          'concat:template'
+        ]
 
       grunt:
         files: 'Gruntfile.coffee'
@@ -111,7 +150,11 @@ module.exports = (grunt) ->
         files: 'src/**/*.jade'
         options:
           interrupt: true
-        tasks: 'jade:dev'
+        tasks: [
+          'jade:dev'
+          'ngtemplates:app'
+          'concat:template'
+        ]
 
       stylus:
         files: 'src/**/*.styl'
@@ -128,16 +171,20 @@ module.exports = (grunt) ->
   grunt.registerTask 'build:dev', 'Running development tasks...', [
     'coffee:dev'
     'jade:dev'
+    'ngtemplates:app'
     'stylus:dev'
     'concat:dev'
+    'concat:template'
     'copy:dev'
   ]
 
   grunt.registerTask 'build:prod', 'Running production tasks...', [
     'coffee:dev'
     'jade:prod'
+    'ngtemplates:app'
     'stylus:prod'
     'concat:dev'
+    'concat:template'
     'copy:dev'
     'uglify:prod'
   ]
