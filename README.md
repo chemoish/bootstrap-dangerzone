@@ -50,8 +50,20 @@ broman/
 │   │   └── vendor.css
 │   └── index.html
 ├── src/ (website files to be edited)
-│   ├── scripts/
-│   │   └── app.coffee
+│   ├── app/
+│   │   ├── shared/ (shared features)
+│   │   │   ├── components/ (generic components)
+│   │   │   └── layout/ (generic layout)
+│   │   │       ├── footer/
+│   │   │       │   ├── controller/
+│   │   │       │   │   └── footer-controller.jade
+│   │   │       │   └── _footer.jade
+│   │   │       └── header/
+│   │   │           ├── controller/
+│   │   │           │   └── header-controller.jade
+│   │   │           └── _header.jade
+│   │   ├── app.coffee
+│   │   └── index.jade (html5 boilerplate port)
 │   ├── style/
 │   │   ├── components/ (generic components)
 │   │   ├── layout/
@@ -65,7 +77,7 @@ broman/
 │   │   ├── font.styl (font/google font additions)
 │   │   ├── icon.styl
 │   │   └── variable.styl (website colors, etc)
-│   └── index.jade (html5 boilerplate port)
+│   └── 
 ├── vendor/
 │   └── bower_components/ (managed by bower - do not touch)
 ├── .bowerrc
