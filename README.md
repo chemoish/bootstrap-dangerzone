@@ -78,7 +78,7 @@ broman/
 │   │   └── variable.styl (website colors, etc)
 │   └── 
 ├── vendor/
-│   └── bower_components/ (managed by bower - do not touch)
+│   └── bower/ (managed by bower - do not touch)
 ├── .bowerrc
 ├── .gitignore
 ├── bower.json
