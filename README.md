@@ -35,6 +35,37 @@ It also comes with a biased folder structure that accommodates both small and la
 
 After you execute the ```grunt``` command, along with installing the dependencies for npm and bower, your project will look a lot different. Orly?
 
+```
+
+dist/
+src/
+vendor/
+
+```
+
+
+```
+
+fonts/
+scripts/
+style/
+index.html
+
+```
+
+```
+
+app/
+style/
+
+```
+
+```
+
+bower/
+
+```
+
 See below for folder structure intended by the creator:
 
 ```
@@ -94,4 +125,3 @@ broman/
 * Explain how to extend folder structure: assts, img, fonts
 * Explain how to extend scripts/styles
 * Provide example of phony app folder structure so that we don't have to create a bunch of empty directories to convey this information
-* Include ngTemplates
