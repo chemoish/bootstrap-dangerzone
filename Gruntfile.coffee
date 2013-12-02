@@ -71,15 +71,15 @@ module.exports = (grunt) ->
         files: [
           dest: 'dist/style/vendor.css'
           src: [
-            'vendor/bower_components/foundation/css/foundation.css'
-            'vendor/bower_components/font-awesome/css/font-awesome.css'
+            'vendor/bower/foundation/css/foundation.css'
+            'vendor/bower/font-awesome/css/font-awesome.css'
           ]
         ,
           dest: 'dist/script/vendor.js',
           src: [
-            'vendor/bower_components/jQuery/jquery.js'
-            'vendor/bower_components/angular/angular.js'
-            'vendor/bower_components/foundation/js/foundation.js'
+            'vendor/bower/jQuery/jquery.js'
+            'vendor/bower/angular/angular.js'
+            'vendor/bower/foundation/js/foundation.js'
           ]
         ]
         
@@ -107,13 +107,13 @@ module.exports = (grunt) ->
           flatten: true
           src: 'img/**/*'
         ,
-          cwd: 'vendor/bower_components'
+          cwd: 'vendor/bower'
           dest: 'dist/fonts/'
           expand: true
           flatten: true
           src: 'font-awesome/fonts/**/*'
         ,
-          cwd: 'vendor/bower_components'
+          cwd: 'vendor/bower'
           dest: 'dist/script/'
           expand: true
           flatten: true
