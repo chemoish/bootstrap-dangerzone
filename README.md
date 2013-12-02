@@ -54,22 +54,21 @@ broman/
 │   │   ├── shared/ (shared features)
 │   │   │   ├── components/ (generic components)
 │   │   │   └── layout/ (generic layout)
-│   │   │       ├── footer/
-│   │   │       │   ├── controller/
-│   │   │       │   │   └── footer-controller.jade
-│   │   │       │   └── _footer.jade
-│   │   │       └── header/
+│   │   │       └── main/
 │   │   │           ├── controller/
+│   │   │           │   ├── footer-controller.jade
 │   │   │           │   └── header-controller.jade
+│   │   │           ├── _footer.jade
 │   │   │           └── _header.jade
 │   │   ├── app.coffee
 │   │   └── index.jade (html5 boilerplate port)
 │   ├── style/
 │   │   ├── components/ (generic components)
 │   │   ├── layout/
-│   │   │   ├── content.styl
-│   │   │   ├── header.styl
-│   │   │   └── footer.styl
+│   │   │   └── main/
+│   │   │       ├── content.styl
+│   │   │       ├── footer.styl
+│   │   │       └── header.styl
 │   │   ├── mixin/
 │   │   ├── template/ (specific website views/pages/content)
 │   │   ├── app.styl
