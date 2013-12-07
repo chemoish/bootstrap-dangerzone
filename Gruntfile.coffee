@@ -66,6 +66,9 @@ module.exports = (grunt) ->
         options:
           urlfunc: '<%= stylus.dev.options.urlfunc %>'
 
+    clean:
+      dev: 'tmp'
+
     concat:
       dev:
         files: [
