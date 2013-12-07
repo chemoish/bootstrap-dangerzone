@@ -6,7 +6,7 @@
     "font-awesome": "*",
     "foundation": "*",
     "html5-boilerplate": "*",
-    "jQuery": "*",
+    "jquery": "*",
     "modernizr": "*"
   }
 }
