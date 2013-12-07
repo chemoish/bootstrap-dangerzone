@@ -123,6 +123,14 @@ module.exports = (grunt) ->
           src: 'modernizr/modernizr.js'
         ]
 
+    'gh-pages':
+      docs:
+        options:
+          base: 'tmp/doc'
+        src: [
+          '**'
+        ]
+
     uglify:
       prod:
         files: [
