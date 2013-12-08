@@ -15,12 +15,10 @@ module.exports = (grunt) ->
 
     coffee:
       dev:
-        files: [
-          dest: 'dist/script/app.js'
-          src: [
-            'src/app/app.coffee'
-            'src/app/**/*.coffee'
-          ]
+        dest: 'tmp/app.js'
+        src: [
+          'src/app/app.coffee'
+          'src/app/**/*.coffee'
         ]
 
     jade:
@@ -89,12 +87,12 @@ module.exports = (grunt) ->
             'vendor/bower/foundation/js/foundation.js'
           ]
         ]
-        
-      template:
+
+      scripts:
         files: [
           dest: 'dist/script/app.js'
           src: [
-            'dist/script/app.js'
+            '<%= coffee.dev.dest %>'
             '<%= ngtemplates.app.dest %>'
           ]
         ]
@@ -155,7 +153,7 @@ module.exports = (grunt) ->
           interrupt: true
         tasks: [
           'coffee:dev'
-          'concat:template'
+          'concat:scripts'
         ]
 
       grunt:
@@ -168,7 +166,7 @@ module.exports = (grunt) ->
         tasks: [
           'jade:dev'
           'ngtemplates:app'
-          'concat:template'
+          'concat:scripts'
         ]
 
       stylus:
@@ -189,7 +187,7 @@ module.exports = (grunt) ->
     'ngtemplates:app'
     'stylus:dev'
     'concat:dev'
-    'concat:template'
+    'concat:scripts'
     'copy:dev'
   ]
 
@@ -199,7 +197,8 @@ module.exports = (grunt) ->
     'ngtemplates:app'
     'stylus:prod'
     'concat:dev'
-    'concat:template'
+    'concat:scripts'
     'copy:dev'
     'uglify:prod'
   ]
+
