@@ -1,5 +1,6 @@
 module.exports = (grunt) ->
   grunt.loadNpmTasks 'grunt-angular-templates'
+  grunt.loadNpmTasks 'grunt-contrib-clean'
   grunt.loadNpmTasks 'grunt-contrib-coffee'
   grunt.loadNpmTasks 'grunt-contrib-concat'
   grunt.loadNpmTasks 'grunt-contrib-connect'
@@ -67,7 +68,10 @@ module.exports = (grunt) ->
           urlfunc: '<%= stylus.dev.options.urlfunc %>'
 
     clean:
-      dev: 'tmp'
+      dev: [
+        'dist'
+        'tmp'
+      ]
 
     concat:
       dev:
