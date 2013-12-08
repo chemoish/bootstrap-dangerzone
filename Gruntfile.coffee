@@ -9,6 +9,7 @@ module.exports = (grunt) ->
   grunt.loadNpmTasks 'grunt-contrib-stylus'
   grunt.loadNpmTasks 'grunt-contrib-uglify'
   grunt.loadNpmTasks 'grunt-contrib-watch'
+  grunt.loadNpmTasks 'grunt-gh-pages'
 
   grunt.initConfig
     pkg: grunt.file.readJSON 'package.json'
@@ -202,3 +203,7 @@ module.exports = (grunt) ->
     'uglify:prod'
   ]
 
+  grunt.registerTask 'pages', 'Running pages tasks...', [
+    'build:dev'
+    'gh-pages'
+  ]
