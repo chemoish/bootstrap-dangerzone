@@ -129,7 +129,7 @@ module.exports = (grunt) ->
     'gh-pages':
       docs:
         options:
-          base: 'tmp/doc'
+          base: 'dist'
         src: [
           '**'
         ]
@@ -204,6 +204,6 @@ module.exports = (grunt) ->
   ]
 
   grunt.registerTask 'pages', 'Running pages tasks...', [
-    'build:dev'
+    'build:prod'
     'gh-pages'
   ]
