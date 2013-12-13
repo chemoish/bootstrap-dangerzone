@@ -56,14 +56,31 @@ module.exports = (grunt) ->
       dev:
         files: [
           dest: 'dist/style/app.css'
-          src: 'src/style/app.styl'
+          src: [
+            # include base styles
+            'src/style/app.styl'
+
+            # include feature styles
+            'src/app/**/index.styl'
+          ]
         ]
         options:
-          compress: false
+          cmpress: false
+          import: [
+            'nib'
+
+            # feature variable access
+            'variable'
+          ]
+          paths: [
+            'src/style'
+          ]
           urlfunc: 'url'
       prod:
         files: '<%= stylus.dev.files %>'
         options:
+          import: '<%= stylus.dev.options.import %>'
+          paths: '<%= stylus.dev.options.paths %>'
           urlfunc: '<%= stylus.dev.options.urlfunc %>'
 
     clean:
@@ -88,6 +105,7 @@ module.exports = (grunt) ->
             'vendor/bower/foundation/js/foundation.js'
           ]
         ]
+
       prod:
         files: [
           dest: 'dist/style/vendor.css'

@@ -71,43 +71,50 @@ See below for folder structure intended by the creator:
 ```
 broman/
 ├── dist/ (website files to be distributed - do not touch)
-│   ├── fonts/
-│   ├── scripts/
-│   │   ├── app.js
-│   │   ├── modernizr.js
-│   │   └── vendor.js
-│   ├── style/
-│   │   ├── app.css
-│   │   └── vendor.css
-│   └── index.html
 ├── src/ (website files to be edited)
 │   ├── app/
+│   │   ├── feature-a/
+│   │   │   ├── controller/
+│   │   │   ├── directive/
+│   │   │   ├── filter/
+│   │   │   ├── model/
+│   │   │   ├── service/
+│   │   │   ├── style/
+│   │   │   ├── test/
+│   │   │   ├── _feature-a.jade (partials are "_" prefixed file names)
+│   │   │   └── feature-a.jade (pages are non prefixed file names)
+│   │   ├── layout/ (generic layout)
+│   │   │   ├── controller/
+│   │   │   │   ├── footer-controller.jade
+│   │   │   │   └── header-controller.jade
+│   │   │   ├── _footer.jade
+│   │   │   └── _header.jade
 │   │   ├── shared/ (shared features)
-│   │   │   ├── components/ (generic components)
-│   │   │   └── layout/ (generic layout)
-│   │   │       └── main/
-│   │   │           ├── controller/
-│   │   │           │   ├── footer-controller.jade
-│   │   │           │   └── header-controller.jade
-│   │   │           ├── _footer.jade
-│   │   │           └── _header.jade
+│   │   │   ├── component/ (generic components)
+│   │   │   │   └── component-a/
+│   │   │   │       ├── directive/
+│   │   │   │       ├── service/
+│   │   │   │       ├── style/
+│   │   │   │       └── _component.jade
+│   │   │   ├── filter/
+│   │   │   │   └── test/
+│   │   │   ├── model/
+│   │   │   │   └── test/
+│   │   │   └── service/
+│   │   │       └── test/
 │   │   ├── app.coffee
 │   │   └── index.jade (html5 boilerplate port)
-│   ├── style/
-│   │   ├── components/ (generic components)
-│   │   ├── layout/
-│   │   │   └── main/
-│   │   │       ├── content.styl
-│   │   │       ├── footer.styl
-│   │   │       └── header.styl
-│   │   ├── mixin/
-│   │   ├── template/ (specific website views/pages/content)
-│   │   ├── app.styl
-│   │   ├── base.styl (tag customization)
-│   │   ├── font.styl (font/google font additions)
-│   │   ├── icon.styl
-│   │   └── variable.styl (website colors, etc)
-│   └── 
+│   └── style/
+│       ├── components/ (generic css only components)
+│       │   └── foundation/ (foundation overrides)
+│       ├── mixin/
+│       ├── app.styl
+│       ├── base.styl (tag customization excluding font)
+│       ├── font.styl (font family additions)
+│       ├── icon.styl
+│       ├── typography.styl (font styles)
+│       └── variable.styl (website colors, etc)
+│
 ├── vendor/
 │   └── bower/ (managed by bower - do not touch)
 ├── .bowerrc
