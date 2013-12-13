@@ -75,7 +75,7 @@ broman/
 │   │   └── index.jade (html5 boilerplate port)
 │   ├── asset/ (site static content)
 │   ├── img/ (site images)
-│   ├── fonts/ (site fonts)
+│   ├── font/ (site fonts)
 │   └── style/
 │       ├── components/ (generic css only components)
 │       │   └── foundation/ (foundation overrides)
