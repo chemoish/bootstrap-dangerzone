@@ -198,6 +198,7 @@ module.exports = (grunt) ->
   ]
 
   grunt.registerTask 'build:dev', 'Running development tasks...', [
+    'clean:dev'
     'coffee:dev'
     'jade:dev'
     'ngtemplates:app'
@@ -208,6 +209,7 @@ module.exports = (grunt) ->
   ]
 
   grunt.registerTask 'build:prod', 'Running production tasks...', [
+    'clean:dev'
     'coffee:dev'
     'jade:prod'
     'ngtemplates:app'
