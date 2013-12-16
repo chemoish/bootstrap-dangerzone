@@ -1,1 +1,8 @@
-angular.module 'app', []
+angular.module 'app', ['ngRoute'], [
+  '$locationProvider'
+  '$routeProvider'
+  (
+    $locationProvider
+    $routeProvider
+  ) ->
+]

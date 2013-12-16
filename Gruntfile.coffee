@@ -102,6 +102,7 @@ module.exports = (grunt) ->
           src: [
             'vendor/bower/jQuery/jquery.js'
             'vendor/bower/angular/angular.js'
+            'vendor/bower/angular-route/angular-route.js'
             'vendor/bower/foundation/js/foundation.js'
           ]
         ]
@@ -118,6 +119,7 @@ module.exports = (grunt) ->
           src: [
             'vendor/bower/jQuery/jquery.min.js'
             'vendor/bower/angular/angular.min.js'
+            'vendor/bower/angular-route/angular-route.min.js'
             'vendor/bower/foundation/js/foundation.min.js'
           ]
         ]
